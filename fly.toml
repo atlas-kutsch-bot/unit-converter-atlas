@@ -1,13 +1,8 @@
 app = "unit-converter-atlas"
 primary_region = "fra"
 
-[http_service]
-  internal_port = 3000
-  force_https = true
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ["app"]
+# Removed [http_service] to disable public internet access.
+# The app will now only be accessible via the private network.
 
 [[vm]]
   size = "shared-cpu-1x"
