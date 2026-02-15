@@ -53,29 +53,29 @@
 
     <script>
         async function convert() {
-            const from = document.getElementById("fromUnit").value;
-            const to = document.getElementById("toUnit").value;
-            const value = parseFloat(document.getElementById("inputValue").value);
+            const from = document.getElementById('fromUnit').value;
+            const to = document.getElementById('toUnit').value;
+            const value = parseFloat(document.getElementById('inputValue').value);
             
-            const res = await fetch("/api/convert", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+            const res = await fetch('/api/convert', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ from, to, value })
             });
             
             const data = await res.json();
-            const resultDiv = document.getElementById("result");
+            const resultDiv = document.getElementById('result');
             resultDiv.innerText = `${value} ${from} = ${data.result} ${to}`;
-            resultDiv.classList.remove("hidden");
+            resultDiv.classList.remove('hidden');
             
             loadHistory();
         }
 
         async function loadHistory() {
-            const res = await fetch("/api/history");
+            const res = await fetch('/api/history');
             const data = await res.json();
-            const list = document.getElementById("history");
-            list.innerHTML = data.map(log => `<li>${log.value}${log.from_unit} → ${log.result}${log.to_unit}</li>`).join("");
+            const list = document.getElementById('history');
+            list.innerHTML = data.map(log => `<li>${log.value}${log.from_unit} → ${log.result}${log.to_unit}</li>`).join('');
         }
 
         loadHistory();
