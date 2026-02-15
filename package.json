@@ -1,13 +1,13 @@
-"{
-  \"name\": \"unit-converter-site\",
-  \"version\": \"1.0.0\",
-  \"description\": \"\",
-  \"main\": \"server.js\",
-  \"scripts\": {
-    \"start\": \"node server.js\"
+{
+  "name": "unit-converter-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
   },
-  \"dependencies\": {
-    \"better-sqlite3\": \"^12.6.2\",
-    \"express\": \"^5.2.1\"
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "express": "^5.2.1"
   }
-}"
+}
